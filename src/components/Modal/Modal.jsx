@@ -1,7 +1,13 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Overlay, ModalImage, ModalWrapper } from './Modal.styles';
 
 export class Modal extends Component {
+  static = {
+    imageModal: PropTypes.string,
+    onClose: PropTypes.func.isRequired,
+  };
+
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown);
   }
@@ -32,5 +38,3 @@ export class Modal extends Component {
     );
   }
 }
-
-// onClose imgModal = > static Prop Type
